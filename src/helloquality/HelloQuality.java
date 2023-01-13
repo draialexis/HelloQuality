@@ -12,39 +12,50 @@ import java.util.List;
  * @author aldrai
  */
 public class HelloQuality {
-    
-    private final static int NOT_A_MAGIC_NUMBER = 100000;
-    
-    private static List<Integer> myList = new ArrayList();
+
+    private final static int HUNDRED_THOU = 100000;   
+    private final static int HUNDRED = 100;
+
+
+    private static List<Object> myList = new ArrayList();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         int i = 0;
-        while(true) {
-            try  {
+        while (true) {
+            try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
-                
+
             }
             System.out.println("Iteration: " + i);
             exo2();
             i++;
         }
     }
-    
+
     private static void exo1() {
-        List<Integer> list = new ArrayList();
-        for(int i = 0; i < NOT_A_MAGIC_NUMBER; i++) {
-            list.add(i);            
+        List<Object> list = new ArrayList();
+        for (int i = 0; i < HUNDRED_THOU; i++) {
+            list.add(new Object());
         }
     }
-    
+
     private static void exo2() {
-        for(int i = 0; i < NOT_A_MAGIC_NUMBER; i++) {
-            myList.add(i);            
+        for (int i = 0; i < HUNDRED_THOU; i++) {
+            myList.add(new Object());
         }
     }
-    
+
+    private static void exo3() {
+        for (int i = 0; i < HUNDRED_THOU; i++) {
+            myList.add(new Object());
+        }
+        for (int i = 0; i < HUNDRED; i++) {
+            myList.remove(0);
+        }
+    }
+
 }
